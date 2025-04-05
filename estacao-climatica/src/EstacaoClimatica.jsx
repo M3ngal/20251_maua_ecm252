@@ -38,10 +38,7 @@ export default class EstacaoClimatica extends Component {
                                 this.props.latitude ?
                                     `Coordenadas: ${this.props.latitude}, ${this.props.longitude}, Data: ${this.state.data}`
                                     :
-                                    this.props.mensagemDeErro ?
-                                        `${this.props.mensagemDeErro}`
-                                        :
-                                        'Clique no Botão para saber a sua estação'
+                                    'Clique no Botão para saber a sua estação'
                             }
                         </p>
                     </div>
