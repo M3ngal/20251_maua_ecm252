@@ -18,7 +18,7 @@ export default class App extends React.Component {
     pexelsClient.get('/search', {
       params: {
         query: termo,
-        per_page: 1
+        per_page: 15
       }
     })
       .then(result => this.setState({ photos: result.data.photos }))
