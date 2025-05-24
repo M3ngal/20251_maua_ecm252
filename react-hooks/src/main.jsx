@@ -7,7 +7,7 @@ import 'primeicons/primeicons.css'
 import 'primeflex/primeflex.min.css'
 
 createRoot(document.getElementById('root')).render(
-  <StrictMode>
+  // <StrictMode>
     <App />
-  </StrictMode>,
+  // </StrictMode>,
 )
