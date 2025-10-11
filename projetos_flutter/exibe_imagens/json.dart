@@ -22,7 +22,7 @@ class PessoaModel{
     PessoaModel(this.nome, this.idade);
 
     PessoaModel.fromJSON(decodedJSON){
-        nome = decodedJSON['nome'],
-        idade = decodedJSON['idade']
+        nome = decodedJSON['nome'];
+        idade = decodedJSON['idade'];
     }
 }
