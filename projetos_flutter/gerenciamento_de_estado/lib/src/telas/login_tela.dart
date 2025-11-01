@@ -18,7 +18,7 @@ class LoginTela extends StatelessWidget {
             child: Row(
               children: [
                 Expanded(
-                  child: submitButton(),
+                  child: submitButton(bloc),
                 )
               ],
             ),
@@ -40,7 +40,7 @@ class LoginTela extends StatelessWidget {
           decoration: InputDecoration(
             hintText: 'seu@email.com',
             labelText: 'Endereço de e-mail',
-            errorText: snapshot.hasError ? snapshot.error.toString() : "",
+            errorText: snapshot.hasError ? snapshot.error.toString() : null,
           ),
         );
       },
@@ -57,17 +57,22 @@ class LoginTela extends StatelessWidget {
           decoration: InputDecoration(
             hintText: 'Senha',
             labelText: 'Senha',
-            errorText: snapshot.hasError ? snapshot.error.toString() : "",
+            errorText: snapshot.hasError ? snapshot.error.toString() : null,
           ),
         );
       },
     );
   }
 
-  Widget submitButton(){
-    return ElevatedButton(
-      onPressed: (){},
-      child: Text('Login')
+  Widget submitButton(Bloc bloc){
+    return StreamBuilder(
+      stream: bloc.emailAndPasswordAreOk,
+      builder: (BuildContext context, AsyncSnapshot<bool> snapshot) {
+        return ElevatedButton(
+          onPressed: snapshot.hasData ? bloc.submitForm : null,
+          child: Text('Login'),
+        );
+      },
     );
   }
 }

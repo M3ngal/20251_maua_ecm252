@@ -11,16 +11,16 @@ mixin Validators {
                 sink.addError("E-mail inválido");
             }
         }
-    )
+    );
 
     final validatePassword = StreamTransformer<String, String>.fromHandlers (
         handleData: (password, sink) {
-            if (password.length() >= 4) {
+            if (password.length >= 4) {
                 sink.add(password);
             }
             else {
                 sink.addError("Senha inválida");
             }
         }
-    )
+    );
 }
